@@ -12,7 +12,7 @@
 			"type": "text"
 		},
 		{
-			"name": "author",
+			"name": "creator",
 			"value": "{{schema:author|wikilink}}",
 			"type": "multitext"
 		},
