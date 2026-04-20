@@ -32,9 +32,9 @@
 			"type": "number"
 		},
 		{
-			"name": "year",
+			"name": "published",
 			"value": "{{selector:p[data-testid='publicationInfo']|split:\" \"|last}}",
-			"type": "number"
+			"type": "date"
 		},
 		{
 			"name": "scoreGr",
