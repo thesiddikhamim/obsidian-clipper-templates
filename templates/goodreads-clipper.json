@@ -40,6 +40,11 @@
 			"type": "number"
 		},
 		{
+			"name": "ratingsCount",
+			"value": "{{selector:[data-testid='ratingsCount']}}",
+			"type": "text"
+		},
+		{
 			"name": "myRating",
 			"value": "{{selector:.BookRatingStars span[role='group']?aria-label|split:\\\\\" \\\\\"|slice:1,2|first}}",
 			"type": "text"
