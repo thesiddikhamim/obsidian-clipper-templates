@@ -4,7 +4,7 @@
 	"behavior": "create",
 	"noteNameFormat": "{{selector:.BookPageTitleSection__title h1}}",
 	"path": "References",
-	"noteContentFormat": "{{selector:.BookPageMetadataSection__description}}",
+	"noteContentFormat": "![image]({{schema:image}})\n{{selector:.BookPageMetadataSection__description}}",
 	"properties": [
         {
             "name": "categories",
