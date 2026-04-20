@@ -2,15 +2,13 @@
 	"schemaVersion": "0.1.0",
 	"name": "Goodreads",
 	"behavior": "create",
-	"noteNameFormat": "{{selector:.BookPageTitleSection__title h1}}",
-	"path": "References",
-	"noteContentFormat": "![image]({{schema:image}})\n{{selector:.BookPageMetadataSection__description}}",
+	"noteContentFormat": "![image]({{schema:image}})\n",
 	"properties": [
-        {
-            "name": "categories",
-            "value": "[[Books]]",
-            "type": "multitext"
-        },
+		{
+			"name": "categories",
+			"value": "[[Books]]",
+			"type": "multitext"
+		},
 		{
 			"name": "title",
 			"value": "{{selector:.BookPageTitleSection__title h1}}",
@@ -33,7 +31,7 @@
 		},
 		{
 			"name": "published",
-			"value": "{{selector:p[data-testid='publicationInfo']|split:\" \"|last}}",
+			"value": "{{selector:p[data-testid='publicationInfo']|split:\\\" \\\"|last}}",
 			"type": "date"
 		},
 		{
@@ -42,9 +40,9 @@
 			"type": "number"
 		},
 		{
-			"name": "rating",
-			"value": "",
-			"type": "number"
+			"name": "myRating",
+			"value": "{{selector:.BookRatingStars span[role='group']?aria-label|split:\\\\\" \\\\\"|slice:1,2|first}}",
+			"type": "text"
 		},
 		{
 			"name": "cover",
@@ -68,11 +66,18 @@
 		},
 		{
 			"name": "tags",
-			"value": "books, to-read",
+			"value": "books, read",
 			"type": "multitext"
+		},
+		{
+			"name": "description",
+			"value": "{{selector:.BookPageMetadataSection__description}}",
+			"type": "text"
 		}
 	],
 	"triggers": [
 		"https://www.goodreads.com/book/"
-	]
+	],
+	"noteNameFormat": "{{selector:.BookPageTitleSection__title h1}}",
+	"path": "Books"
 }
