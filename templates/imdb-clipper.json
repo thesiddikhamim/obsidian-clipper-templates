@@ -2,8 +2,6 @@
 	"schemaVersion": "0.1.0",
 	"name": "IMDB",
 	"behavior": "create",
-	"noteNameFormat": "{{schema:name}}",
-	"path": "References",
 	"noteContentFormat": "",
 	"properties": [
 		{
@@ -14,6 +12,11 @@
 		{
 			"name": "genre",
 			"value": "{{schema:genre|wikilink|join}}",
+			"type": "multitext"
+		},
+		{
+			"name": "stars",
+			"value": "{{selector:[data-testid=\\\"title-pc-principal-credit\\\"]:nth-child(3) div a|unique|wikilink|join}}",
 			"type": "multitext"
 		},
 		{
@@ -30,11 +33,6 @@
 			"name": "scoreImdb",
 			"value": "{{schema:aggregateRating.ratingValue}}",
 			"type": "number"
-		},
-		{
-			"name": "cast",
-			"value": "{{selector:[data-testid=\\\"title-pc-principal-credit\\\"]:nth-child(3) div a|unique|wikilink|join}}",
-			"type": "multitext"
 		},
 		{
 			"name": "cover",
@@ -64,5 +62,7 @@
 	],
 	"triggers": [
 		"/^https:\\/\\/www\\.imdb\\.com\\/title\\/tt\\d+(?!\\/reference\\/)(\\/[^\\s]*)?$/"
-	]
+	],
+	"noteNameFormat": "{{schema:name}}",
+	"path": "References"
 }
